@@ -11,13 +11,13 @@ You must import this by running the ddl code, like this:
 
 Right click on your _schema_ folder, and select the "Run SQL Script...".
 
-This should import a new schema, the dvd rental.
+This should import a new schema, the simple_imdb.
 
 Then, you must import data. Download the data her:
 
 [Simple IMDb data](IMDB_shows_data.sql)
 
-And then run it, in the same way as before. You should now have a "dvdrental" schema with data. Verify this.
+And then run it, in the same way as before. You should now have a "simple_imdb" schema with data. Verify this.
 
 The below is a Global Relations Diagram to get an overview of the database:
 
