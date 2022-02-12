@@ -23,8 +23,7 @@ The below is a Global Relations Diagram to get an overview of the database:
 
 ![](imdb-13.png)
 
-You may want to right click the above, and open the image in a new tab, if it is too small.
-
-Over the following slides, you will be asked questions, which must be answered by querying the dvdrental database.\
+On the following slides, you will be asked questions, which must be answered by querying the simple_imdb database.\
 All questions can be answered with a single sql statement (consider this a challange), but sometimes it is easier to do multiple statements.
-For most questions, you can also find the answer as a hint. Do give it a serious try first, before you look at the answer.
+For most questions, you can also find the answer as a hint. Do give it a serious try first, before you look at the answer. \
+Proposed sql solutions are also available and are hidden as well.
