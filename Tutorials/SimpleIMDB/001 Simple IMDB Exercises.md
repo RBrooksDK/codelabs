@@ -21,7 +21,7 @@ And then run it, in the same way as before. You should now have a "dvdrental" sc
 
 The below is a Global Relations Diagram to get an overview of the database:
 
-![](Simple IMDB GR.svg)
+<img src="Simple IMDB GR.svg"/>
 
 You may want to right click the above, and open the image in a new tab, if it is too small.
 
