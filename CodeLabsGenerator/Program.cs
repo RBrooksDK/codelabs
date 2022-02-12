@@ -9,7 +9,7 @@ namespace CodeLabsGenerator
 
         static void Main(string[] args)
         {
-            GenerateOne("Latextest");
+            GenerateOne("SimpleIMDB");
             // GenerateMany();
         }
 

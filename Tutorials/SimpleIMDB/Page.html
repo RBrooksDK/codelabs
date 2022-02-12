@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="./../../Resources/Style.css" rel="stylesheet">
+<link href="./../../Resources/prism.css" rel="stylesheet">
+<script src="./../../Resources/TabNavigavtor.js"></script>
+<link rel="shortcut icon" href="./../../Resources/CodeIcon.png">
+<title>VIA Codelabs</title>
+<body>
+<script src="./../../Resources/prism.js"></script>
+
+<div>
+    <a href="./../../index.html" class="homelink">HOME</a>
+</div>
+<div style="display:flex;width:100%;height:100%;padding-top:64px">
+    <div>
+        <ol>
+            <li class="step" onclick="setTab(0)">1 Simple IMDB Exercises</li>
+<li class="step" onclick="setTab(1)">2 Exercise 1</li>
+<li class="step" onclick="setTab(2)">3 Exercise 2</li>
+<li class="step" onclick="setTab(3)">4 Exercise 3</li>
+<li class="step" onclick="setTab(4)">5 Exercise 4</li>
+<li class="step" onclick="setTab(5)">6 Exercise 5</li>
+<li class="step" onclick="setTab(6)">7 Exercise 6</li>
+<li class="step" onclick="setTab(7)">8 Exercise 7</li>
+<li class="step" onclick="setTab(8)">9 Exercise 8</li>
+<li class="step" onclick="setTab(9)">10 Exercise 9</li>
+<li class="step" onclick="setTab(10)">11 Exercise 10</li>
+<li class="step" onclick="setTab(11)">12 Exercise 11</li>
+
+        </ol>
+    </div>
+    <div id="container" action="/action_page.php">
+        <div style="overflow:auto;">
+
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">&lt; Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next &gt;</button>
+            </div>
+        </div>
+
+        <!-- One "tab" for each step in the form: -->
+
+        <div class="tab">
+<hr/><h1 id="simple-imdb-exercises">Simple IMDb Exercises</h1><hr/>
+<p>In these exercises we will use a new data set about a subset if the IMDb database.</p>
+<p>You must first import this data set. Download the ddl file from here:</p>
+<p><a href="IMDB_shows_DDL.sql">Simple IMDb ddl</a></p>
+<p>You must import this by running the ddl code, like this:</p>
+<p><img src="img.png" alt="" /></p>
+<p>Right click on your <em>schema</em> folder, and select the &quot;Run SQL Script...&quot;.</p>
+<p>This should import a new schema, the dvd rental.</p>
+<p>Then, you must import data. Download the data her:</p>
+<p><a href="IMDB_shows_data.sql">Simple IMDb data</a></p>
+<p>And then run it, in the same way as before. You should now have a &quot;dvdrental&quot; schema with data. Verify this.</p>
+<p>The below is a Global Relations Diagram to get an overview of the database:</p>
+<p>![](Simple IMDB GR.svg)</p>
+<p>You may want to right click the above, and open the image in a new tab, if it is too small.</p>
+<p>Over the following slides, you will be asked questions, which must be answered by querying the dvdrental database.<br />
+All questions can be answered with a single sql statement (consider this a challange), but sometimes it is easier to do multiple statements.
+For most questions, you can also find the answer as a hint. Do give it a serious try first, before you look at the answer.</p>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-1">Exercise 1</h1><hr/>
+<p>What is the name of the person with id 103?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-01.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT name FROM people WHERE id=103;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-2">Exercise 2</h1><hr/>
+<p>How many people has the name 'Jennifer'?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-02.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT COUNT(*)
+FROM people
+WHERE name LIKE '%Jennifer%';
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-3">Exercise 3</h1><hr/>
+<p>How many people were born in 1967?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-04.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT COUNT (*)
+FROM people
+WHERE birth = 1967;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-4">Exercise 4</h1><hr/>
+<p>How many writers were born in 1967?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-03.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT COUNT (*)
+FROM people
+WHERE birth = 1967
+  AND Id IN (
+    SELECT person_id
+    FROM writers
+      )
+;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-5">Exercise 5</h1><hr/>
+<p>How many episodes does the show 'The Young and the Restless' have?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-05.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT title, episodes
+FROM shows
+WHERE title = 'The Young and the Restless'
+ORDER BY episodes DESC;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-6">Exercise 6</h1><hr/>
+<p>Which shows has 'Drew Barrymore' starred in?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-06.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT title
+FROM stars,
+     shows
+WHERE person_id IN (
+    SELECT id
+    from people
+    where name = 'Drew Barrymore'
+    )
+  AND show_id = id
+;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-7">Exercise 7</h1><hr/>
+<p>What are the genres of 'Voltz'?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-08.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT genre
+FROM genres, shows
+WHERE genres. show_id = shows.id
+  AND title = 'Voltz';
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-8">Exercise 8</h1><hr/>
+<p>List the names of the stars of 'The Young and the Restless'</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-09.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT name
+FROM stars,
+     people
+WHERE person_id = id
+  AND show_id = (
+  SELECT id
+  FROM shows
+  WHERE title = 'The Young and the Restless'
+      )
+;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-9">Exercise 9</h1><hr/>
+<p>What is the title and rating of the highest rated show(s)?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-10.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">SELECT title, rating
+FROM ratings,
+     shows
+WHERE Show_id = id
+  AND rating = (
+      SELECT MAX (rating)
+      FROM ratings
+      )
+;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-10">Exercise 10</h1><hr/>
+<p>Which people are both stars and writers?</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-11.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">-- Use distinct to remove duplicate rows
+SELECT DISTINCT name
+FROM stars,
+     writers,
+     people
+WHERE stars.person_id = id
+  AND writers.person_id = id
+;
+</code></pre>
+</details>
+
+</div>
+<div class="tab">
+<hr/><h1 id="exercise-11">Exercise 11</h1><hr/>
+<p>List the names of both stars and writers of 'The Young and the Restless</p>
+<details>
+<summary>Show answer</summary>
+<p><img src="imdb-12.png" alt="" /></p>
+</details>
+<br/>
+<details>
+<summary>Show SQL</summary>
+<pre><code class="line-numbers language-sql">-- Didn't manage to make a join work
+SELECT DISTINCT name
+FROM people
+-- This where finds filters by the people(id) being in a set
+WHERE id IN (
+-- This select find the stars (person_id) of the show with a specific id
+    SELECT person_id
+    FROM stars
+    WHERE show_id = (
+-- This select find the id of the show
+        SELECT id
+        FROM shows
+        WHERE title = 'The Young and the Restless'
+        )
+    )
+    OR id IN (
+        SELECT person_id
+        FROM writers
+        WHERE show_id = (
+            SELECT id
+            FROM shows
+            WHERE title = 'The Young and the Restless'
+            )
+        )
+;
+</code></pre>
+</details>
+
+</div>
+
+
+
+        <div style="overflow:auto;">
+
+            <div style="float:right;">
+                <button type="button" id="prevBtn1" onclick="nextPrev(-1)">&lt; Previous</button>
+                <button type="button" id="nextBtn1" onclick="nextPrev(1)">Next &gt;</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script>
+    showFirstOrSpecificTab();
+</script>
+
+</body>
+</html>
