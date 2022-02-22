@@ -15,7 +15,7 @@ This should import a new schema, the simple_imdb.
 
 Then, you must import data. Download the data her:
 
-[Simple IMDb data](IMDB_shows_data.sql)
+[Simple IMDb data](https://drive.google.com/file/d/1QqTU-o-n-Fe4X9LoIhrJtLMNhlq7OQZH/view?usp=sharing)
 
 And then run it, in the same way as before. You should now have a "simple_imdb" schema with data. Verify this.
 
