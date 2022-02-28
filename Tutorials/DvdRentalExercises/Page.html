@@ -44,7 +44,7 @@
 <hr/><h1 id="dvd-rental-exercises">DVD Rental Exercises</h1><hr/>
 <p>In these exercises we will use a new data set, about a DVD rental business.</p>
 <p>You must first import this data set. Download the ddl file from here:</p>
-<p><a href="DVD_rental_DDL.sql">DVD rental ddl</a></p>
+<p><a href="IMDB_shows_DDL.sql">DVD rental ddl</a></p>
 <p>You must import this by running the ddl code, like this:</p>
 <p><img src="img.png" alt="img.png" /></p>
 <p>Right click on your <em>schema</em> folder, and select the &quot;Run SQL Script...&quot;.</p>
@@ -191,17 +191,22 @@ AND film_actor.film_id IN (
 <details>
 <summary>Show SQL</summary>
 <pre><code class="line-numbers language-sql">SELECT customer_id, rental.staff_id, first_name, last_name
-FROM rental, staff
-WHERE rental.staff_id=staff.staff_id
-AND inventory_id IN (
-    SELECT inventory_id
-    FROM inventory
-    WHERE film_id = (
-        SELECT film_id
-        FROM film
-        WHERE title = 'HUNCHBACK IMPOSSIBLE'
-        )
-    );
+FROM rental,
+     staff
+WHERE rental.staff_id = staff.staff_id
+  AND inventory_id IN (SELECT inventory_id
+                       FROM inventory
+                       WHERE film_id = (
+                           SELECT film_id
+                           FROM film
+                           WHERE title = 'HUNCHBACK IMPOSSIBLE')
+                         AND customer_id = (
+                           SELECT customer_id
+                           FROM customer
+                           WHERE customer.first_name = 'KURT'
+                             AND customer.last_name = 'EMMONS'
+                       )
+);
 </code></pre>
 </details>
 
