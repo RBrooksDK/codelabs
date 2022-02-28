@@ -16,17 +16,22 @@ What is the name of the staff who rented a copy of 'HUNCHBACK IMPOSSIBLE' to cus
 
 ```sql
 SELECT customer_id, rental.staff_id, first_name, last_name
-FROM rental, staff
-WHERE rental.staff_id=staff.staff_id
-AND inventory_id IN (
-    SELECT inventory_id
-    FROM inventory
-    WHERE film_id = (
-        SELECT film_id
-        FROM film
-        WHERE title = 'HUNCHBACK IMPOSSIBLE'
-        )
-    );
+FROM rental,
+     staff
+WHERE rental.staff_id = staff.staff_id
+  AND inventory_id IN (SELECT inventory_id
+                       FROM inventory
+                       WHERE film_id = (
+                           SELECT film_id
+                           FROM film
+                           WHERE title = 'HUNCHBACK IMPOSSIBLE')
+                         AND customer_id = (
+                           SELECT customer_id
+                           FROM customer
+                           WHERE customer.first_name = 'KURT'
+                             AND customer.last_name = 'EMMONS'
+                       )
+);
 ```
 
 </details>
