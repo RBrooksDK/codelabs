@@ -3,7 +3,7 @@ In these exercises we will use a new data set, about a DVD rental business.
 
 You must first import this data set. Download the ddl file from here:
 
-[DVD rental ddl](IMDB_shows_DDL.sql)
+[DVD rental ddl](DVD_rental_DDL.sql)
 
 You must import this by running the ddl code, like this:
 
