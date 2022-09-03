@@ -33,4 +33,4 @@ You may want to right-click and open in a new tab, to increase the size, or down
 Over the following slides, you will be asked questions, which must be answered by querying the dvdrental database.
 All questions can be answered with a single sql statement (consider this a challange), but sometimes it is easier to do multiple statements.
 
-For most questions, you can also find the an/swer as a hint. Do give it a serious try first, before you look at the answer. Some of these questions are tough, and you need to google for extra SQL "tools".
+For most questions, you can also find the answer as a hint. Do give it a serious try first, before you look at the answer. Some of these questions are tough, and you need to google for extra SQL "tools".
