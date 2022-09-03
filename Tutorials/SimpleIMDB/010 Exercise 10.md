@@ -1,4 +1,4 @@
-﻿# Exercise 9
+﻿# Exercise 10
 
 What is the title and rating of the highest rated show(s)?
 

@@ -1,11 +1,11 @@
-﻿# Exercise 3
+﻿# Exercise 5
 
-How many people were born in 1967?
+How many writers were born in 1967?
 
 <details>
 <summary>Show answer</summary>
 
-![](imdb-04.png)
+![](imdb-03.png)
 
 </details>
 
@@ -17,7 +17,12 @@ How many people were born in 1967?
 ```sql
 SELECT COUNT (*)
 FROM people
-WHERE birth = 1967;
+WHERE birth = 1967
+  AND Id IN (
+    SELECT person_id
+    FROM writers
+      )
+;
 ```
 
 </details>

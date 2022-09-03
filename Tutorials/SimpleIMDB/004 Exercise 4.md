@@ -1,11 +1,11 @@
-﻿# Exercise 1
+﻿# Exercise 4
 
-What is the name of the person with id 103?
+How many people were born in 1967?
 
 <details>
 <summary>Show answer</summary>
 
-![](imdb-01.png)
+![](imdb-04.png)
 
 </details>
 
@@ -15,7 +15,9 @@ What is the name of the person with id 103?
 <summary>Show SQL</summary>
 
 ```sql
-SELECT name FROM people WHERE id=103;
+SELECT COUNT (*)
+FROM people
+WHERE birth = 1967;
 ```
 
 </details>
