@@ -7,7 +7,7 @@ You must first import this data set. Download the ddl file from here:
 
 You must import this by running the ddl code, like this:
 
-![img_10.png](img_10.png)
+![img_10.png](run.png)
 
 Right click on your _schema_ folder, and select the "SQL Scripts" --> "Run SQL Script...".
 

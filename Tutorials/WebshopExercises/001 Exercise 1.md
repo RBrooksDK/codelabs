@@ -10,7 +10,7 @@ Download first the dll file here:
 
 You must import this by running the ddl code, like this:
 
-![img.png](C:\Users\RIB\RiderProjects\codelabs\Tutorials\DvdRentalExercises\img_10.png)
+![img.png](run.png)
 
 Right click on your _schema_ folder, and select the "SQL Scripts" --> "Run SQL Script...".
 
