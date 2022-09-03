@@ -7,9 +7,9 @@ You must first import this data set. Download the ddl file from here:
 
 You must import this by running the ddl code, like this:
 
-![](img.png)
+![](C:\Users\RIB\RiderProjects\codelabs\Tutorials\DvdRentalExercises\img_10.png)
 
-Right click on your _schema_ folder, and select the "Run SQL Script...".
+Right click on your _schema_ folder, and select the "SQL Scripts" --> "Run SQL Script...".
 
 This should import a new schema, the simple_imdb.
 

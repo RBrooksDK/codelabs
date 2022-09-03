@@ -10,9 +10,9 @@ Download first the dll file here:
 
 You must import this by running the ddl code, like this:
 
-![img.png](img.png)
+![img.png](C:\Users\RIB\RiderProjects\codelabs\Tutorials\DvdRentalExercises\img_10.png)
 
-Right click on your _schema_ folder, and select the "Run SQL Script...".
+Right click on your _schema_ folder, and select the "SQL Scripts" --> "Run SQL Script...".
 
 This should import a new schema, the dvd rental.
 
