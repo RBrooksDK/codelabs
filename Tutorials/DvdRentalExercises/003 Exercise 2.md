@@ -17,7 +17,7 @@ Create a list of films (title and description) longer than 120 minutes.
 ```sql
 SELECT title, description
 FROM film
-WHERE lenght > 120;
+WHERE length > 120;
 ```
 
 </details>
